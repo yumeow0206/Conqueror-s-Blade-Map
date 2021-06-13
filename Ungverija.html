@@ -3,41 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <title>Ungverija Map</title>
-  <style>
-    function converDownload() {
-  var svg = document.querySelector("svg");
-  var svgData = new XMLSerializer().serializeToString(svg);
-  var canvas = document.createElement("canvas");
-  canvas.width = svg.width.baseVal.value;
-  canvas.height = svg.height.baseVal.value;
-
-  var ctx = canvas.getContext("2d");
-  var image = new Image;
-  image.onload = function(){
-      ctx.drawImage( image, 0, 0 );
-      var a = document.createElement("a");
-      a.href = canvas.toDataURL("image/png");
-      a.setAttribute("download", "Ungverija.png");
-      a.dispatchEvent(new MouseEvent("click"));
-  }
-	image.src = "data:image/svg+xml;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(svgData))); 
-}
-
-var fill = 'cls-1';
-$('.cls-11').click(function () {
-	if($("#edit_input").val() != "") {
-  	$(this).text($("#edit_input").val());
-  }
-})
-$('rect').click(function(){
-	fill = $(this).attr('class');
-})
-$('path').click(function () {
-  	$(this).attr('class',fill);
-  
-})
-
-  </style>
 	  
   </head>
   <body>
@@ -127,4 +92,40 @@ $('path').click(function () {
     
   </body>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	      
+  <script>
+    function converDownload() {
+  var svg = document.querySelector("svg");
+  var svgData = new XMLSerializer().serializeToString(svg);
+  var canvas = document.createElement("canvas");
+  canvas.width = svg.width.baseVal.value;
+  canvas.height = svg.height.baseVal.value;
+
+  var ctx = canvas.getContext("2d");
+  var image = new Image;
+  image.onload = function(){
+      ctx.drawImage( image, 0, 0 );
+      var a = document.createElement("a");
+      a.href = canvas.toDataURL("image/png");
+      a.setAttribute("download", "Ungverija.png");
+      a.dispatchEvent(new MouseEvent("click"));
+  }
+	image.src = "data:image/svg+xml;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(svgData))); 
+}
+
+var fill = 'cls-1';
+$('.cls-11').click(function () {
+	if($("#edit_input").val() != "") {
+  	$(this).text($("#edit_input").val());
+  }
+})
+$('rect').click(function(){
+	fill = $(this).attr('class');
+})
+$('path').click(function () {
+  	$(this).attr('class',fill);
+  
+})
+
+  </script>
 </html>

@@ -420,47 +420,49 @@
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js">
 	</script> 
 	<script>
-	   function converDownload() {
-	 var svg = document.querySelector("svg");
-	 var svgData = new XMLSerializer().serializeToString(svg);
-	 var canvas = document.createElement("canvas");
-	 canvas.width = svg.width.baseVal.value;
-	 canvas.height = svg.height.baseVal.value;
-
-	 var ctx = canvas.getContext("2d");
-	 var image = new Image;
-	 image.onload = function(){
-	     ctx.drawImage( image, 0, 0 );
-	     var a = document.createElement("a");
-	     a.href = canvas.toDataURL("image/png");
-	     a.setAttribute("download", "Ungverija.png");
-	     a.dispatchEvent(new MouseEvent("click"));
-	 }
-	   image.src = "data:image/svg+xml;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(svgData))); 
-	}
+		function converDownload() {
+			var svg = document.querySelector("svg");
+			var svgData = new XMLSerializer().serializeToString(svg);
+			var canvas = document.createElement("canvas");
+			canvas.width = svg.width.baseVal.value;
+			canvas.height = svg.height.baseVal.value;
+			var ctx = canvas.getContext("2d");
+			var image = new Image;
+			image.onload = function() {
+				ctx.drawImage(image, 0, 0);
+				var a = document.createElement("a");
+				a.href = canvas.toDataURL("image/png");
+				a.setAttribute("download", "Ungverija.png");
+				a.dispatchEvent(new MouseEvent("click"));
+			}
+			image.src = "data:image/svg+xml;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(svgData)));
+		}
 	</script> 
 	<script>
-	var fill = 'cls-1';
-	$('.cls-11').click(function () {
-	   if($("#edit_input").val() != "") {
-	   $(this).text($("#edit_input").val());
-	 }
-	})
-	$('rect').click(function(){
-	   fill = $(this).attr('class');
-	})
-	$('path').click(function () {
-	   $(this).attr('class',fill);
-	 
-	})
-	         
-	$('input').click(function(){
-	   if($(this).attr('value') == 'no'){
-	   $('#map_name').attr('style','display:none;')    }
-
-	   if($(this).attr('value') == 'zh'){
-	   $('#map_name').attr('style','display:block;')   }
-	})
+		var fill = 'cls-1';
+		$('.cls-11').click(function() {
+			if ($("#edit_input").val() != "") {
+				$(this).text($("#edit_input").val());
+			}
+		})
+		$('rect ~ text').click(function() {
+			if ($(this).attr('class') == 'cls-11') {
+				fill = $(this).prev().attr('class');
+			} else {
+				fill = $(this).attr('class');
+			}
+		})
+		$('path').click(function() {
+			$(this).attr('class', fill);
+		})
+		$('input').click(function() {
+			if ($(this).attr('value') == 'no') {
+				$('#map_name').attr('style', 'display:none;')
+			}
+			if ($(this).attr('value') == 'zh') {
+				$('#map_name').attr('style', 'display:block;')
+			}
+		})
 	</script> 
 </body>
 </html>

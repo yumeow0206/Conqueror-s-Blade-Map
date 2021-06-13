@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ungverija Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="/assets/css/style.css?v=c28ede7a3de99c20165b206503d1527a7763b318">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">佩牙利斯</h1>
+      <h2 class="project-tagline">自定義大世界地圖編輯器</h2>
+      
+        <!--<a href="https://www.google.com/url?q=https%3A%2F%2Fdiscord.gg%2F9KMNz9J&sa=D&sntz=1&usg=AFQjCNEcVZX-EWKHretymTZtiTINsbvWDA" class="btn">Join to Discord</a>
+      -->
+      
+    </section>
+
+    <section class="main-content">
+      <h1>SVG</h1>
+      
+    </section>
+
+    
+  </body>
+</html>

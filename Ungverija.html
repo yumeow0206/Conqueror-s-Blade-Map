@@ -9,7 +9,7 @@
 		<h1>佩牙利斯</h1> 
 		<label><input checked name="language" type="radio" value="no"> Off,</label> <label><input name="language" type="radio" value="en" disabled> English,</label> <label><input name="language" type="radio" value="zh"> 中文,</label> <label><input name="language" type="radio" value="jp" disabled> 日本語,</label> <label><input name="language" type="radio" value="kr" disabled> 한국어</label>
 		<button class="download" onclick="converDownload()">將此文件轉換為圖檔並下載</button><br/>
-		<input id="edit_input"> 輸入文字並點擊下方標示可替換文字:
+		<input id="edit_input" placeholder="輸入並點擊圖例可替換文字">
 	</section>
 	<section class="main-content">
 		 <svg viewbox="0 0 1366 768" xmlns="http://www.w3.org/2000/svg">
@@ -86,6 +86,14 @@
 				}
 				#map_name {
 					display: none;
+				}
+				#edit_input {
+					color: white;
+					background-color: grey;
+					border: 0;
+					border-radius: 10px;
+					padding: 5px;
+					padding-left: 15px;
 				}
 			</style>
 		</defs>

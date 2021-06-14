@@ -454,12 +454,11 @@
 				$(this).text($("#edit_input").val());
 			}
 		})
+		$('rect').click(function() {
+			fill = $(this).attr('class');
+    		})
 		$('rect ~ text').click(function() {
-			if ($(this).attr('class') == 'cls-11') {
-				fill = $(this).prev().attr('class');
-			} else {
-				fill = $(this).attr('class');
-			}
+			fill = $(this).prev().attr('class');
 		})
 		$('path').click(function() {
 			$(this).attr('class', fill);

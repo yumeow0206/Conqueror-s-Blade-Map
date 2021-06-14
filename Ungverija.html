@@ -3,6 +3,38 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Ungverija Map</title>
+	<style>
+		body {
+			color: #ccc;
+			background: #313131;
+			padding: 20px;
+		}
+		rect:hover {
+			cursor: url(https://map.hkiweb.xyz/get.cur) 10 15, crosshair;
+		}
+		path:hover {
+			fill: #282828;
+			cursor: url(https://map.hkiweb.xyz/set.cur) 10 10, crosshair;
+		}
+		label {
+			vertical-align: bottom;
+		}
+		#edit_input {
+			color: white;
+			background-color: grey;
+			border: dotted;
+			border-color: gray;
+			border-bottom-color: white;
+			border-radius: 2px;
+			padding-left: 15px;
+			width: 180px;
+			height: 25px;
+			margin-right: 20px
+		}
+		::placeholder {
+			color: #ccc;
+		}
+	</style>
 </head>
 <body>
 	<section class="page-header">
@@ -15,17 +47,6 @@
 		 <svg viewbox="0 0 1366 768" xmlns="http://www.w3.org/2000/svg">
 		<defs>
 			<style>
-				body {
-					color: #ccc;
-					background: #313131;
-				}
-				rect:hover {
-					cursor: url(https://map.hkiweb.xyz/get.cur) 10 15, crosshair;
-				}
-				path:hover {
-					fill: #282828;
-					cursor: url(https://map.hkiweb.xyz/set.cur) 10 10, crosshair;
-				}
 				.cls-1 {
 					fill: #3b3b3b;
 				}
@@ -86,21 +107,6 @@
 				}
 				#map_name {
 					display: none;
-				}
-				::placeholder {
-					color: #ccc;
-				}
-				#edit_input {
-					color: white;
-					background-color: grey;
-					border: dotted;
-					border-color: gray;
-					border-bottom-color: white;
-					border-radius: 2px;
-					padding-left: 15px;
-					width: 180px;
-					height: 25px;
-					margin-right: 20px
 				}
 			</style>
 		</defs>

@@ -37,9 +37,33 @@
 		::placeholder {
 			color: #bbb;
 		}
+		.bg {
+			overflow: hidden;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			top: 0;
+			position: fixed;
+			pointer-events: none;
+			mix-blend-mode: screen;
+			background-image: url(https://www.conquerorsbladehub.com/images/regions/ungverija.jpg);
+			background-size: contain;
+			filter: blur(5px);
+		}
+		.bg-video {
+			height: 100vh;
+			mix-blend-mode: screen;
+			filter: opacity(0.3);
+		}
+		section {
+			text-align: center;
+		}
 	</style>
 </head>
 <body>
+	<div class="bg">
+		<video class="bg-video" src="Cinematic Background HD.mp4" autoplay="autoplay" muted="true" loop="true"></video>
+	</div>
 	<section class="page-header">
 		<h1 style="display: inline-block;">Ungverija (佩牙利斯)</h1> 
 		by DI-小魚餌 <button class="download" onclick="converDownload()" style=" margin-left: 20px; color: currentcolor; background-color: darkslategrey; border: dashed; border-color: cadetblue; border-radius: 55px; padding: 10px; ">💾 Save Image As PNG </button><br/>
